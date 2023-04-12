@@ -14,7 +14,7 @@ class InvitationViewSet(mixins.CreateModelMixin,
 
 # class InvitationRecommendationView(APIView):
 #     def get(self, request, *args, **kwargs):
-#         # 1. 获取当前用户（如：user = request.user）
+#         # 1. 获取当前用户（如：custom_user = request.custom_user）
 #         # 2. 基于当前用户的游戏偏好和好友关系计算推荐邀请
 #         # 3. 返回推荐邀请的列表
 #         recommendations = []  # 替换为您的推荐算法返回的邀请列表

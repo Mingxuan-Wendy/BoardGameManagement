@@ -4,4 +4,4 @@ from .models import GameReviewRating
 class GameReviewRatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = GameReviewRating
-        fields = ('id', 'user', 'game', 'review', 'rating', 'timestamp')
+        fields = ('id', 'custom_user', 'game', 'review', 'rating', 'timestamp')

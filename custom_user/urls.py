@@ -10,4 +10,6 @@ urlpatterns = [
     path('user_settings/<int:pk>/', views.User_SettingsRetrieveUpdateDestroy.as_view(), name='user_settings_retrieve_update_destroy'),
     path('system_settings/', views.System_SettingsListCreate.as_view(), name='system_settings_list_create'),
     path('system_settings/<int:pk>/', views.System_SettingsRetrieveUpdateDestroy.as_view(), name='system_settings_retrieve_update_destroy'),
+    path('register/', views.Register.as_view(), name='register'),
+    path('login/', views.Login.as_view(), name='login'),
 ]

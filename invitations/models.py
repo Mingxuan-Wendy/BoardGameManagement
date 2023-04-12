@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
+from custom_user.models import CustomUser
 
 class Invitation(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_invitations')
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_invitations')
+    sender = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='sent_invitations')
+    receiver = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='received_invitations')
     game_id = models.IntegerField()
     STATUS_CHOICES = [
         ('pending', 'Pending'),
