@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .models import Collection, Game_Wishlist, Game_Blacklist
-from .serializers import CollectionSerializer, Game_WishlistSerializer, Game_BlacklistSerializer
+from .serializers import CollectionSerializer, Game_WishlistSerializer, Game_BlacklistSerializer, GameSerializer
+from game.models import Game
 
 class CollectionListCreate(generics.ListCreateAPIView):
     queryset = Collection.objects.all()
@@ -25,3 +26,10 @@ class Game_BlacklistListCreate(generics.ListCreateAPIView):
 class Game_BlacklistRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Game_Blacklist.objects.all()
     serializer_class = Game_BlacklistSerializer
+
+class UserGameListView(generics.ListAPIView):
+    serializer_class = GameSerializer
+
+    def get_queryset(self):
+        user_id = self.kwargs['user_id']
+        return Game.objects.filter(collection__user_id=user_id, collection__delete_time__isnull=True)

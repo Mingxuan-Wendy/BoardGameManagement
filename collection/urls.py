@@ -8,4 +8,5 @@ urlpatterns = [
     path('wishlist/<int:pk>/', views.Game_WishlistRetrieveUpdateDestroy.as_view(), name='game_wishlist_retrieve_update_destroy'),
     path('blacklist/', views.Game_BlacklistListCreate.as_view(), name='game_blacklist_list_create'),
     path('blacklist/<int:pk>/', views.Game_BlacklistRetrieveUpdateDestroy.as_view(), name='game_blacklist_retrieve_update_destroy'),
+    path('user/<int:user_id>/games/', views.UserGameListView.as_view(), name='user-game-list'),
 ]
