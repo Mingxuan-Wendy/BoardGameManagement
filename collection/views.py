@@ -32,4 +32,4 @@ class UserGameListView(generics.ListAPIView):
 
     def get_queryset(self):
         user_id = self.kwargs['user_id']
-        return Game.objects.filter(collection__user_id=user_id, collection__delete_time__isnull=True)
+        return Game.objects.filter(collection__custom_user_id=user_id, collection__delete_time__isnull=True)
