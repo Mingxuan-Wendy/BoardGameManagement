@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'reviews',
     'shopping',
     'user_reaction',
+    'rest_framework',
+    'search',
 ]
 
 MIDDLEWARE = [
