@@ -6,6 +6,10 @@ class GameList(generics.ListAPIView):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
 
+class GameDetail(generics.RetrieveAPIView):
+    queryset = Game.objects.all()
+    serializer_class = GameSerializer
+
 class CategoriesList(generics.ListAPIView):
     queryset = Categories.objects.all()
     serializer_class = CategoriesSerializer
